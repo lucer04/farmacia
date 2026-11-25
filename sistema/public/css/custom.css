@@ -124,3 +124,30 @@ body { background-color: #f4f6f8; }
 .login-input-group:focus-within .input-group-text,
 .login-input-group:focus-within .form-control { border-color: var(--bs-primary); }
 .login-input-group .form-control.is-invalid ~ .input-group-text { border-color: var(--bs-danger); }
+/* Tabla de usuarios */
+.users-table-responsive {
+    overflow: visible !important;
+}
+
+.users-actions-dropdown {
+    position: relative;
+}
+
+.users-actions-dropdown .dropdown-menu {
+    z-index: 1090;
+}
+
+/* Menú de acciones */
+.users-actions-dropdown {
+    position: relative;
+}
+
+.users-actions-dropdown .dropdown-menu {
+    z-index: 1080;
+    min-width: 150px;
+}
+
+/* Evitar que el menú quede detrás de otros elementos */
+.users-actions-dropdown .dropdown-menu.show {
+    display: block;
+}

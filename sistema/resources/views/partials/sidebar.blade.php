@@ -68,13 +68,16 @@
                     <i class="bi bi-shield-lock fs-6"></i><span class="small fw-medium">Roles</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="#"
-                    class="nav-link sidebar-link text-white-50 rounded-4 px-3 py-2 d-flex align-items-center gap-2 {{ request()->is('usuarios*') ? 'active_item' : '' }}"
-                    aria-current="{{ request()->is('usuarios*') ? 'page' : '' }}">
-                    <i class="bi bi-person-gear fs-6"></i><span class="small fw-medium">Usuarios</span>
-                </a>
-            </li>
+            
+<li class="nav-item">
+    <a href="{{ route('usuarios.index') }}"
+        class="nav-link sidebar-link text-white-50 rounded-4 px-3 py-2 d-flex align-items-center gap-2 {{ request()->is('usuarios*') ? 'active_item' : '' }}"
+        aria-current="{{ request()->is('usuarios*') ? 'page' : '' }}">
+        <i class="bi bi-person-gear fs-6"></i>
+        <span class="small fw-medium">Usuarios</span>
+    </a>
+</li>
+
             <li class="nav-item">
                 <a href="{{ route('categorias.index') }}"
                     class="nav-link sidebar-link text-white-50 rounded-4 px-3 py-2 d-flex align-items-center gap-2 {{ request()->is('categorias*') ? 'active_item' : '' }}"
