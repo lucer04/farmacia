@@ -4,8 +4,8 @@
         <select name="items[{{ $index }}][medicine_id]" required class="form-select">
             <option value="">Seleccione un medicamento</option>
             @foreach ($medicines as $medicine)
-                <option value="{{ $medicine->id }}" data-price="{{ $medicine->price }}" @selected(($item['medicine_id'] ?? '') == $medicine->id)>
-                    {{ $medicine->name }} (existencia: {{ $medicine->stock }})
+                <option value="{{ $medicine->id }}" data-price="{{ $medicinePrices[$medicine->id] ?? $medicine->price }}" @selected(($item['medicine_id'] ?? '') == $medicine->id)>
+                    {{ $medicine->name }} (existencia: {{ $medicine->stock + ($stockForSale[$medicine->id] ?? 0) }})
                 </option>
             @endforeach
         </select>

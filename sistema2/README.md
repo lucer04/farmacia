@@ -6,8 +6,9 @@ reportes y control de acceso por roles.
 ## Módulos
 
 - CRUD de roles, categorías, usuarios, clientes y medicamentos.
+- CRUD de proveedores con búsqueda, filtros por estado y datos de contacto.
 - Búsqueda, filtros, paginación, stock bajo y gestión de imágenes de medicamentos.
-- Registro y anulación de ventas con detalle, validación de stock y operaciones transaccionales.
+- Registro, edición y anulación de ventas con detalle, validación de stock y operaciones transaccionales.
 - Dashboard con indicadores y gráficos de ventas, categorías y medicamentos.
 - Reportes de ventas con filtros por fechas, cliente, vendedor y categoría; descarga en PDF y Excel.
 - Inicio/cierre de sesión, permisos por rol y PWA con fallback sin conexión.
@@ -43,7 +44,7 @@ php artisan db:seed
 ```
 
 El seeder de demostración solo se permite en `local` o `testing`, conserva cuentas existentes
-y genera ventas de muestra únicamente si el catálogo y las ventas están vacíos. No lo ejecutes
+y conserva los proveedores existentes; genera ventas de muestra únicamente si el catálogo y las ventas están vacíos. No lo ejecutes
 contra una base productiva.
 
 Instala y compila los recursos del frontend, prepara el acceso a imágenes y arranca Laravel:

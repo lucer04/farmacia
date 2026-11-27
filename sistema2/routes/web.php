@@ -8,6 +8,7 @@ use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SaleController;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +22,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 
     Route::resource('customers', CustomerController::class)->except('show');
+    Route::resource('suppliers', SupplierController::class)
+        ->middleware('role:Administrador,Químico farmacéutico');
     Route::resource('sales', SaleController::class)
         ->only(['index', 'create', 'store', 'show', 'destroy'])
         ->middlewareFor('destroy', 'role:Administrador');
+    Route::resource('sales', SaleController::class)
+        ->only(['edit', 'update'])
+        ->middleware('role:Administrador');
 
     Route::middleware('role:Administrador,Químico farmacéutico')->group(function () {
         Route::resource('medicines', MedicineController::class)->except('show');

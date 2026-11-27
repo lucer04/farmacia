@@ -39,6 +39,11 @@
             <i class="bi bi-box-seam fs-6"></i><span class="small fw-medium">Medicamentos</span>
           </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('suppliers.index') }}" class="nav-link sidebar-link text-white-50 rounded-4 px-3 py-2 d-flex align-items-center gap-2 {{ request()->is(['suppliers*']) ? 'active_item' : null }}" aria-current="{{ request()->is(['suppliers*']) ? 'page' : null }}">
+                <i class="bi bi-truck fs-6"></i><span class="small fw-medium">Proveedores</span>
+            </a>
+        </li>
         @endif
         <li class="nav-item">
               <a href="{{ route('customers.index') }}" class="nav-link sidebar-link text-white-50 rounded-4 px-3 py-2 d-flex align-items-center gap-2 {{ request()->is(['customers*']) ? 'active_item' : null }}" aria-current="{{ request()->is(['customers*']) ? 'page' : null }}">

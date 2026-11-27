@@ -30,6 +30,7 @@
                                 <td class="text-nowrap">
                                     <a href="{{ route('sales.show', $sale) }}" class="btn btn-sm btn-outline-primary">Ver detalle</a>
                                     @if (auth()->user()->hasRole('Administrador'))
+                                    <a href="{{ route('sales.edit', $sale) }}" class="btn btn-sm btn-outline-secondary">Editar</a>
                                     <form action="{{ route('sales.destroy', $sale) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Anular esta venta? El stock será devuelto.')">
                                         @csrf
                                         @method('DELETE')
